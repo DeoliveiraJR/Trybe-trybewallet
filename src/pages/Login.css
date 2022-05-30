@@ -12,9 +12,10 @@
 }
 
 .main-title {
+  display: flex;
   color: #e17055;
   font-size: 48px;
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 10px;
 }
 
@@ -28,17 +29,17 @@
   border-radius: 20%;
   display: flex;
   flex-direction: column;
-  height: 75%;
+  height: 600px;
   justify-content: center;
-  width: 30%;
+  width: 350px;
 }
 
 .main-input {
   background-color: white;
-  border-radius: 5px;
   border-bottom-color: #e17055;
   border-bottom-width: 1px;
   border-left: 0;
+  border-radius: 5px;
   border-right: 0;
   border-top: 0;
   color: #4d5156;
@@ -90,7 +91,7 @@
 .main-span .link {
   color: #00cec9;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 700;
   text-decoration: none;
 }
 
