@@ -1,17 +1,17 @@
 // Coloque aqui suas actions
-export const NEW_ACTION_USER = 'NEW_ACTION_USER';
-export const NEW_ACTION_WALLET = 'NEW_ACTION_WALLET';
+export const LOGIN_USER = 'LOGIN_USER';
+export const GET_DATA_WALLET = 'GET_DATA_WALLET';
 
-export function newActionUser(state) {
+export function getEmailAndLogin(email) {
   return {
-    type: NEW_ACTION_USER,
-    payload: state,
+    type: LOGIN_USER,
+    email,
   };
 }
 
-export function newActionWallet(state) {
+export function getDatarWallet(dataWallet) {
   return {
-    type: NEW_ACTION_WALLET,
-    payload: state,
+    type: GET_DATA_WALLET,
+    payload: dataWallet,
   };
 }
