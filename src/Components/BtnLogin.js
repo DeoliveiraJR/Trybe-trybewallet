@@ -52,7 +52,7 @@ class BtnLogin extends React.Component {
 
     return (
       <button
-        data-testid=""
+        className="main-button"
         type="button"
         disabled={ statusBtn }
         onClick={ onClickButton }

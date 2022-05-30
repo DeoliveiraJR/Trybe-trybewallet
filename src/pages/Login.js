@@ -3,10 +3,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { getEmailAndLogin } from '../store/actions/index';
 import BtnLogin from '../Components/BtnLogin';
 import Loading from '../Components/Loading';
-import { getEmailAndLogin } from '../store/actions/index';
-// import './Login.css';
+import walletLogo from '../imagens/walletLogo.png';
+import './Login.css';
 
 class Login extends React.Component {
   // =============================================================
@@ -104,32 +106,35 @@ class Login extends React.Component {
     const { email, statusBtn, loading } = this.state;
 
     return (
-      <div data-testid="page-login">
+      <div className="main-div">
         { loading ? (
           <Loading />
         ) : (
-          <div>
-            <img src="" alt="Logo TrybeWallet" />
-            <form>
+          <div className="main-container">
+            <form className="main-form">
+              <img src={ walletLogo } alt="wallet icon" className="main-image" />
+              <h2 className="main-title">TrybeWallet</h2>
 
               {/* componente 1 - input username */}
-              <label htmlFor="email">
+              <label htmlFor="email" className="main-label">
                 <input
+                  className="main-input"
                   type="text"
                   name="email"
                   data-testid="email-input"
-                  placeholder="digite seu usuário"
+                  placeholder="enter your email"
                   onChange={ this.handleOnChange }
                 />
               </label>
 
               {/* componente 2 - input password */}
-              <label htmlFor="password">
+              <label htmlFor="password" className="main-label">
                 <input
+                  className="main-input"
                   type="password"
                   name="password"
                   data-testid="password-input"
-                  placeholder="digite seu usuário"
+                  placeholder="enter your password"
                   onChange={ this.handleOnChange }
                 />
               </label>
@@ -139,6 +144,16 @@ class Login extends React.Component {
                 statusBtn={ statusBtn }
                 onClickButton={ () => this.handleClick(email) }
               />
+
+              {/* CREATE-PROFILE */}
+              <span className="main-span">
+                <p className="title">ainda não é cadastrado?</p>
+                <Link
+                  to="/createProfile"
+                >
+                  <p className="link">cadastrar-se</p>
+                </Link>
+              </span>
             </form>
           </div>
         )}
