@@ -74,7 +74,7 @@ class Login extends React.Component {
   }
 
   // ====----FUNCTION 3----====
-  // describe function: this function validate logic to disable 'btn-Login' and change state if it's necessary:
+  // describe function: this function validate logic to disable 'btn-Login' and change state if necessary:
   handleValidateBtnDisable() {
     console.log('handleBtnDisable');
     console.log('------------');
