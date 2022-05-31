@@ -147,7 +147,7 @@ class Login extends React.Component {
 
               {/* CREATE-PROFILE */}
               <span className="main-span">
-                <p className="title">ainda não é cadastrado?</p>
+                <p className="title-txt">ainda não é cadastrado?</p>
                 <Link
                   to="/createProfile"
                 >

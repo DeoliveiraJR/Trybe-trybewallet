@@ -1,0 +1,35 @@
+.main-header{
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;  
+  align-items: center;
+  background-color: #38ada9;
+  margin-top:2px;
+  margin-left: 2px;
+  margin-right: 2px;
+  height: 80px;
+}
+
+.main-container {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  margin-left: 12px;
+}
+
+.main-header .main-span{
+  margin-right: 12px;
+}
+
+.main-span .title{
+  display: flex;
+  color: #ffeaa7;
+  margin-right: 3px;
+}
+
+.title-bold {
+  color: white;
+  margin-right: 1px;
+}
