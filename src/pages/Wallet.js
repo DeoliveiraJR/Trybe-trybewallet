@@ -7,7 +7,7 @@ import Header from '../Components/Header';
 
 class Wallet extends React.Component {
   // =============================================================
-  // ==========----------CONSTRUCTOR SCOPE--------------==========
+  // ==========----------CONSTRUCTOR SCOPE-------------==========
   // =============================================================
 
   // 1- Constructor and Super;
