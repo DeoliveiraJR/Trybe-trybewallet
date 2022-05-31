@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getEmailAndLogin } from '../store/actions/index';
+import { getEmailAndLogin } from '../actions/index';
 import BtnLogin from '../Components/BtnLogin';
 import Loading from '../Components/Loading';
 import walletLogo from '../imagens/walletLogo.png';
