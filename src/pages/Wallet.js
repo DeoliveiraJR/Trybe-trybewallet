@@ -4,6 +4,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Header from '../Components/Header';
+import { fetchDataWallet } from '../actions/index';
 
 class Wallet extends React.Component {
   // =============================================================
@@ -30,6 +31,9 @@ class Wallet extends React.Component {
   componentDidMount() {
     console.log('[HEADER] - 3.ComponentDidMount');
     console.log('------------');
+    const { fetchCurrencys } = this.props;
+
+    fetchCurrencys();
   }
 
   // =============================================================
@@ -62,10 +66,15 @@ class Wallet extends React.Component {
 
 Wallet.propTypes = {
   email: PropTypes.string.isRequired,
+  fetchCurrencys: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   email: state.user.email,
 });
 
-export default connect(mapStateToProps, null)(Wallet);
+const mapDispatchToProps = (dispatch) => ({
+  fetchCurrencys: () => dispatch(fetchDataWallet()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Wallet);

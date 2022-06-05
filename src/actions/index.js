@@ -9,9 +9,26 @@ export function getEmailAndLogin(email) {
   };
 }
 
-export function getDatarWallet(dataWallet) {
+export function getDataWallet(currencies) {
   return {
     type: GET_DATA_WALLET,
-    payload: dataWallet,
+    currencies: [...currencies],
+    expenses: [],
+  };
+}
+
+export function fetchDataWallet() {
+  const URL = 'https://economia.awesomeapi.com.br/json/all';
+
+  return async (dispatch) => {
+    try {
+      const resolve = await fetch(URL);
+      const data = await resolve.json();
+      const currencies = Object.keys(data).filter((code) => code !== 'USDT');
+      // console.log(currencies);
+      dispatch(getDataWallet(currencies));
+    } catch (error) {
+      console.log(error);
+    }
   };
 }
