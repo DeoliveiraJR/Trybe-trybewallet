@@ -3,9 +3,9 @@
   height: 750px;
 }
 
-.main-container {
+.main-containerLogin {
   align-items: center;
-  background-color: #b2bec3;
+  background-color: #38ada9;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -24,7 +24,7 @@
   margin-top: 10px;
 }
 
-.main-form {
+.main-formLogin {
   align-items: center;
   background-color: white;
   border-radius: 20%;

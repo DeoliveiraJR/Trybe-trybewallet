@@ -1,0 +1,75 @@
+/* ==== -----COMPONENTE HEADER----- ===== */
+
+/* .main-header {
+  align-items: center;
+  background-color: #38ada9;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  height: 80px;
+  justify-content: space-between;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-top: 2px;
+}
+
+.main-container {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  margin-left: 12px;
+}
+
+.main-header .main-span {
+  margin-right: 12px;
+}
+
+.main-span .title {
+  color: #ffeaa7;
+  display: flex;
+  margin-right: 3px;
+}
+
+.title-bold {
+  color: white;
+  margin-right: 1px;
+}
+*/
+
+/* ==== -----COMPONENTE FORM----- ===== */
+
+/*
+.main-form
+{
+  border-radius: 3px;
+  margin-top: 1px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: auto;
+  height: 60px;
+  background-color: #e17055;
+}
+
+.main-form .input {
+  margin-left: 5px;
+  margin-right: 12px;
+}
+
+.select-currency {
+  margin-left: 5px;
+  margin-right: 12px;
+}
+
+.select-categories {
+  margin-left: 5px;
+  margin-right: 12px;
+}
+
+body {
+    color: white;
+    font-size: 15px;
+    font-weight: bold,
+}
+*/

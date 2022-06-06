@@ -110,8 +110,8 @@ class Login extends React.Component {
         { loading ? (
           <Loading />
         ) : (
-          <div className="main-container">
-            <form className="main-form">
+          <div className="main-containerLogin">
+            <form className="main-formLogin">
               <img src={ walletLogo } alt="wallet icon" className="main-image" />
               <h2 className="main-title">TrybeWallet</h2>
 

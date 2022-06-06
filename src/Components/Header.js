@@ -51,7 +51,8 @@ class Header extends React.Component {
     console.log('------------');
 
     // ====Desctructing Objects=====
-    const { email } = this.props;
+    const { email, subtotalProps } = this.props;
+    // console.log(expenses);
 
     return (
       <header className="main-header">
@@ -67,7 +68,7 @@ class Header extends React.Component {
           </p>
           <p data-testid="total-field" className="title">
             <b className="title-bold"> | Valor total R$: | </b>
-            0.00
+            {subtotalProps}
           </p>
           <p data-testid="header-currency-field" className="title"><b>BRL</b></p>
         </span>
@@ -78,6 +79,7 @@ class Header extends React.Component {
 
 Header.propTypes = {
   email: PropTypes.string.isRequired,
+  subtotalProps: PropTypes.number.isRequired,
 };
 
 export default Header;
