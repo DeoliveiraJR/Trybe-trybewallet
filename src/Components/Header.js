@@ -66,9 +66,9 @@ class Header extends React.Component {
             <b className="title-bold"> email: </b>
             {email}
           </p>
-          <p data-testid="total-field" className="title">
+          <p data-testid="total-field-p" className="title">
             <b className="title-bold"> | Valor total R$: | </b>
-            {subtotalProps}
+            <span data-testid="total-field">{subtotalProps}</span>
           </p>
           <p data-testid="header-currency-field" className="title"><b>BRL</b></p>
         </span>

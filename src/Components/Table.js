@@ -1,6 +1,8 @@
 // ==================================----------COMPONENT [Loading]-----------=============================================
 // -----------------------------------------------------------------------------------------------------------------------
 import React from 'react';
+import PropTypes from 'prop-types';
+import './Table.css';
 
 class Table extends React.Component {
   // =============================================================
@@ -43,11 +45,14 @@ class Table extends React.Component {
     console.log('[TABLE]- Render');
     console.log('---------------');
 
+    const { expensesProps } = this.props;
+    console.log(expensesProps);
+
     return (
-      <div>
+      <div className="main-table">
         <table>
           <thead>
-            <tr>
+            <tr className="main-tr">
               <th>Descrição</th>
               <th>Tag</th>
               <th>Método de pagamento</th>
@@ -58,11 +63,35 @@ class Table extends React.Component {
               <th>Moeda de conversão</th>
               <th>Editar/Excluir</th>
             </tr>
+            {expensesProps.map((expense) => (
+              <tr key={ expense.id } className="main-td">
+                <td>{ expense.description }</td>
+                <td>{ expense.tag }</td>
+                <td>{ expense.method }</td>
+                <td>{ (Number(expense.value)).toFixed(2) }</td>
+                <td>{ expense.exchangeRates[expense.currency].name }</td>
+                <td>
+                  { (Number(expense.exchangeRates[expense.currency].ask)).toFixed(2) }
+                </td>
+                <td>
+                  {
+                    (
+                      (expense.value) * (expense.exchangeRates[expense.currency].ask)
+                    ).toFixed(2)
+                  }
+                </td>
+                <td>Real</td>
+              </tr>
+            ))}
           </thead>
         </table>
       </div>
     );
   }
 }
+
+Table.propTypes = {
+  expensesProps: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
+};
 
 export default Table;

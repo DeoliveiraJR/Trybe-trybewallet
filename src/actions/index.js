@@ -43,10 +43,10 @@ export function fetchDataWallet() {
 export function fetchCotacoes(expenses) {
   // console.log(expenses);
   const {
-    countId,
+    id,
     value,
     description,
-    category,
+    tag,
     method,
     currency,
   } = expenses;
@@ -61,10 +61,10 @@ export function fetchCotacoes(expenses) {
       // console.log(data);
 
       const objExpense = [{
-        countId,
+        id,
         value,
         description,
-        category,
+        tag,
         method,
         currency,
         exchangeRates: data,

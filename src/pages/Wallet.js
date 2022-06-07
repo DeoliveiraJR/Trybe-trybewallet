@@ -8,8 +8,6 @@ import Header from '../Components/Header';
 import FormExpenses from '../Components/FormExpenses';
 import Table from '../Components/Table';
 // import './Wallet.css';
-// import '../Components/Header.css';
-// import '../Components/FormExpenses.css';
 
 class Wallet extends React.Component {
   // =============================================================
@@ -29,13 +27,13 @@ class Wallet extends React.Component {
     // 3- create initial-state-component {Object} :
     this.state = {
       // email: '',
-      id: 0,
+      // id: 0,
       currency: '',
       value: '',
       description: '',
-      category: '',
+      tag: '',
       method: '',
-      subtotal: Number(0).toFixed(2),
+      subtotal: '',
     };
   }
 
@@ -72,17 +70,17 @@ class Wallet extends React.Component {
   async handleClick() {
     console.log('handleClick');
     console.log('---------------');
-    const { fetchExpenses } = this.props;
-    const { id, value, description, category, method, currency } = this.state;
+    const { fetchExpenses, expenses } = this.props;
+    const { value, description, tag, method, currency } = this.state;
 
-    const countId = id + 1;
+    const id = expenses.length; // id + 1;
 
-    await fetchExpenses({ countId, value, description, category, method, currency });
+    await fetchExpenses({ id, value, description, tag, method, currency });
     this.setState({
-      id: countId,
+      // id: countId,
       value: '',
       description: '',
-      category: '',
+      tag: '',
       method: '',
       currency: '',
       subtotal: '',
@@ -97,17 +95,18 @@ class Wallet extends React.Component {
     const { expenses } = this.props;
     // console.log(expenses);
     const arrayTotal = [];
-    const pushExpenses = expenses.forEach((element) => {
+    expenses.forEach((element) => {
       console.log(element);
       const valueExpense = Number(element.value);
       const valueRate = Number(element.exchangeRates[element.currency].ask);
       const valueCurrency = Number(valueExpense * valueRate).toFixed(2);
       arrayTotal.push(valueCurrency);
     });
-    console.log(pushExpenses);
     const newSubtotal = arrayTotal.reduce((acc, num) => acc + Number(num), 0);
+    const newSubtotalConvert = Math.floor(newSubtotal * 100) / 100;
+
     this.setState({
-      subtotal: newSubtotal,
+      subtotal: newSubtotalConvert,
     });
   }
 
@@ -119,25 +118,27 @@ class Wallet extends React.Component {
     console.log('-------------');
 
     // ====Desctructing Objects=====
-    const { email, currencies } = this.props;
-    const { value, description, category, method, subtotal } = this.state;
+    const { email, currencies, expenses } = this.props;
+    const { value, description, tag, method, subtotal } = this.state;
 
     return (
       <>
         <Header
           email={ email }
-          subtotalProps={ Number(subtotal).toFixed(2) }
+          subtotalProps={ subtotal }
         />
         <FormExpenses
           valueProps={ Number(value) }
           descriptionProps={ description }
-          categoryProps={ category }
+          categoryProps={ tag }
           methodProps={ method }
           currenciesProps={ currencies }
           onInputChange={ this.handleOnChange }
           onButtonClick={ this.handleClick }
         />
-        <Table />
+        <Table
+          expensesProps={ expenses }
+        />
       </>
     );
   }

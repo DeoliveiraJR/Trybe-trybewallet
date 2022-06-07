@@ -87,13 +87,13 @@ class FormExpenses extends React.Component {
           />
         </label>
         { /* >>>>> component: SELECT-CATEGORIES <<<<< */ }
-        <label htmlFor="category" className="main-label">
+        <label htmlFor="tag" className="main-label">
           Categoria:
           <select
-            id="category"
+            id="tag"
             className="select-categories"
             data-testid="tag-input"
-            name="category"
+            name="tag"
             onChange={ onInputChange }
           >
             <option value="Alimentação">Alimentação</option>
@@ -114,8 +114,8 @@ class FormExpenses extends React.Component {
             onChange={ onInputChange }
           >
             <option value="Dinheiro">Dinheiro</option>
-            <option value="Cartão de Crédito">Cartão de crédito</option>
-            <option value="Cartão de Débito">Cartão de débito</option>
+            <option value="Cartão de crédito">Cartão de crédito</option>
+            <option value="Cartão de débito">Cartão de débito</option>
           </select>
         </label>
         { /* >>>>> component: SELECT-CURRENCIES <<<<< */ }

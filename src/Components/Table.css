@@ -1,0 +1,26 @@
+.main-table {
+  display: table;
+  height: auto;
+  margin-top: 10px;
+  text-align: center;
+  width: auto;
+}
+
+body .main-table {
+  color: #38ada9;
+  display: flex;
+  justify-content: center;
+}
+
+.main-tr {
+  background-color: #ffeaa7;
+  text-align: center;
+}
+
+.main-td {
+  background-color: #dfe6e9;
+  color: #fab1a0;
+  font-size: 12px;
+  font-weight: 0;
+  height: 20px;
+}
