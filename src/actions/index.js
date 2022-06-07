@@ -46,9 +46,9 @@ export function fetchCotacoes(expenses) {
     countId,
     value,
     description,
-    categoria,
-    metodo,
-    moeda,
+    category,
+    method,
+    currency,
   } = expenses;
 
   const URL = 'https://economia.awesomeapi.com.br/json/all';
@@ -64,9 +64,9 @@ export function fetchCotacoes(expenses) {
         countId,
         value,
         description,
-        categoria,
-        metodo,
-        moeda,
+        category,
+        method,
+        currency,
         exchangeRates: data,
       }];
       // console.log(objExpense);

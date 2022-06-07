@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { fetchDataWallet, fetchCotacoes } from '../actions/index';
 import Header from '../Components/Header';
 import FormExpenses from '../Components/FormExpenses';
+import Table from '../Components/Table';
 // import './Wallet.css';
 // import '../Components/Header.css';
 // import '../Components/FormExpenses.css';
@@ -97,6 +98,7 @@ class Wallet extends React.Component {
     // console.log(expenses);
     const arrayTotal = [];
     const pushExpenses = expenses.forEach((element) => {
+      console.log(element);
       const valueExpense = Number(element.value);
       const valueRate = Number(element.exchangeRates[element.currency].ask);
       const valueCurrency = Number(valueExpense * valueRate).toFixed(2);
@@ -135,6 +137,7 @@ class Wallet extends React.Component {
           onInputChange={ this.handleOnChange }
           onButtonClick={ this.handleClick }
         />
+        <Table />
       </>
     );
   }

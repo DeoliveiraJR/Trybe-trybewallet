@@ -119,10 +119,10 @@ class FormExpenses extends React.Component {
           </select>
         </label>
         { /* >>>>> component: SELECT-CURRENCIES <<<<< */ }
-        <label htmlFor="moeda" className="main-label">
+        <label htmlFor="currency" className="main-label">
           Moeda:
           <select
-            id="moeda"
+            id="currency"
             className="select-currency"
             name="currency"
             onChange={ onInputChange }
