@@ -1,6 +1,5 @@
 /* ==== -----COMPONENTE HEADER----- ===== */
-
-/* .main-header {
+.main-header {
   align-items: center;
   background-color: #38ada9;
   border-radius: 5px;
@@ -34,22 +33,18 @@
   color: white;
   margin-right: 1px;
 }
-*/
 
 /* ==== -----COMPONENTE FORM----- ===== */
-
-/*
-.main-form
-{
+.main-form {
+  align-items: center;
+  background-color: #e17055;
   border-radius: 3px;
-  margin-top: 1px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-  width: auto;
   height: 60px;
-  background-color: #e17055;
+  justify-content: flex-end;
+  margin-top: 1px;
+  width: auto;
 }
 
 .main-form .input {
@@ -68,8 +63,7 @@
 }
 
 body {
-    color: white;
-    font-size: 15px;
-    font-weight: bold,
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
 }
-*/

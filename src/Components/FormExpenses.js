@@ -56,6 +56,7 @@ class FormExpenses extends React.Component {
       onInputChange,
       onButtonClick,
     } = this.props;
+    // console.log(this.props);
 
     return (
     /* >>>>> component: FORM <<<<< */
@@ -122,7 +123,7 @@ class FormExpenses extends React.Component {
         <label htmlFor="currency" className="main-label">
           Moeda:
           <select
-            id="currency"
+            // id="currency"
             className="select-currency"
             name="currency"
             onChange={ onInputChange }

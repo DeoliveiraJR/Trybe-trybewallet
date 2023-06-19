@@ -2,6 +2,7 @@
 export const LOGIN_USER = 'LOGIN_USER';
 export const GET_DATA_WALLET = 'GET_DATA_WALLET';
 export const GET_EXPENSES = 'GET_EXPENSES';
+export const DELETE_EXPENSES = 'DELETE_EXPENSES';
 
 export function getEmailAndLogin(email) {
   return {
@@ -10,17 +11,29 @@ export function getEmailAndLogin(email) {
   };
 }
 
-function getDataWallet(currencies) {
+export function getDataWallet(currencies) {
   return {
     type: GET_DATA_WALLET,
     currencies: [...currencies],
   };
 }
 
-function getExpenses(objExpense) {
+function getExpenses(id, expenses, data) {
   return {
     type: GET_EXPENSES,
-    expenses: [...objExpense],
+    payload: {
+      id,
+      ...expenses,
+      exchangeRates: data,
+    },
+  };
+}
+
+export function deleteExpenses(id) {
+  // console.log(id);
+  return {
+    type: DELETE_EXPENSES,
+    id,
   };
 }
 
@@ -40,16 +53,15 @@ export function fetchDataWallet() {
   };
 }
 
-export function fetchCotacoes(expenses) {
+export function fetchCotacoes(id, expenses) {
   // console.log(expenses);
-  const {
-    id,
+  /* const {
     value,
     description,
     tag,
     method,
     currency,
-  } = expenses;
+  } = expenses; */
 
   const URL = 'https://economia.awesomeapi.com.br/json/all';
 
@@ -60,19 +72,18 @@ export function fetchCotacoes(expenses) {
       delete data.USDT;
       // console.log(data);
 
-      const objExpense = [{
-        id,
+      /* const objExpense = [{
         value,
         description,
         tag,
         method,
         currency,
         exchangeRates: data,
-      }];
+      }]; */
       // console.log(objExpense);
       // const subtotal = objExpense.filter((element) => console.log(element));
 
-      dispatch(getExpenses(objExpense));
+      dispatch(getExpenses(id, expenses, data));
     } catch (error) {
       console.log(error);
     }
